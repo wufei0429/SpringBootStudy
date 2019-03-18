@@ -18,6 +18,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Course getOne(long courseId) {
+
         return courseMapper.getOne(courseId);
     }
 
