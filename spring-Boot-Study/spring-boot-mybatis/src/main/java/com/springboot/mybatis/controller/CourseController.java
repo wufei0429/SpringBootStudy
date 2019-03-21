@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/api")
+@CrossOrigin("http://localhost:80")
 public class CourseController {
     @Resource
     private CourseService courseService;
@@ -18,6 +19,12 @@ public class CourseController {
     public List<Course> selectAll() {
        return courseService.selectAll();
     }
+
+    @RequestMapping(value = "/courses1", method = RequestMethod.GET)
+    public List<Course> selectAll1() {
+        return courseService.selectAll1();
+    }
+
     @RequestMapping(value = "/course/{id}",method = RequestMethod.GET)
     public Course getOne(@PathVariable("id") long id){
         return courseService.getOne(id);
